@@ -13,7 +13,7 @@ fn main() {
 
     app.add_transformer::<PlayerInformation, JsonTransformer>(JSON_CHANNEL)
         .add_transformer::<PlayerInformation, BincodeTransformer>(BINCODE_CHANNEL)
-        .add_systems(Startup, (setup_clients))
+        .add_systems(Startup, setup_clients)
         .add_systems(
             Update,
             (
